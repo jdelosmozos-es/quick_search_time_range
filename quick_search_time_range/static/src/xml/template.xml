@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+     <t t-name="tmrange.SearchTimeRange">
+        <span style="float: left; margin-left: 2px; display: none;">
+            <select class="tmrange_select_field form-control" style="height: 30px; padding: 0px 2px;">
+                <option t-foreach="tmrange_fields" t-as="field" t-att-value="field[0]">
+                    <t t-esc="field[1]"/>
+                </option>
+            </select>
+        </span>
+        <div class="tmrange-search btn-group btn-group-sm">
+            <i class="fa fa-calendar" style="font-size: 26px; color: #71639e; margin: 2px 5px"></i>
+            <span style="float: left; margin-left: 2px;">
+                <input style="height: 30px; padding: 0px 2px; width: 225px;" class="tmrange_time_field" size="10" placeholder="Choose time range..." type="text" />
+            </span>
+        </div>
+    </t>
+
+</templates>
