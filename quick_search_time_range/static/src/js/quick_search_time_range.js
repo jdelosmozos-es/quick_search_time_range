@@ -34,6 +34,12 @@ var SearchTimeRange = {
         }, undefined);
 
         self.$tmrange_time_range.find('.tmrange_time_field').css('width', tmrange_is_datetime_field ? 225 : 150);
+        var today = _t('Today');
+        var yesterday = _t('Yesterday')
+        var last_7_days = _t('Last 7 Days')
+        var last_30_days = _t('Last 30 Days')
+        var this_month = _t('This Month')
+        var last_month = _t('Last Month')
         self.$tmrange_time_range.find('.tmrange_time_field').daterangepicker({
             showDropdowns: true,
             timePicker: tmrange_is_datetime_field,
@@ -49,12 +55,12 @@ var SearchTimeRange = {
             },
             // .set({hour:0,minute:0,second:0,millisecond:0})
             ranges: {
-                'Today': [moment().startOf('day'), moment().endOf('day')],
-                'Yesterday': [moment().startOf('day').subtract(1, 'days'), moment().endOf('day').subtract(1, 'days')],
-                'Last 7 Days': [moment().startOf('day').subtract(6, 'days'), moment().endOf('day')],
-                'Last 30 Days': [moment().startOf('day').subtract(29, 'days'), moment().endOf('day')],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                [today]: [moment().startOf('day'), moment().endOf('day')],
+                [yesterday]: [moment().startOf('day').subtract(1, 'days'), moment().endOf('day').subtract(1, 'days')],
+                [last_7_days]: [moment().startOf('day').subtract(6, 'days'), moment().endOf('day')],
+                [last_30_days]: [moment().startOf('day').subtract(29, 'days'), moment().endOf('day')],
+                [this_month]: [moment().startOf('month'), moment().endOf('month')],
+                [last_month]: [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
             }
         });
         var tmrange_time_field = self.$tmrange_time_range.find('.tmrange_time_field')
