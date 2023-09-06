@@ -115,7 +115,7 @@ ListController.include({
         });
 
         _.each(self.initialState.fieldsInfo.list, function(value, key, list){
-            if (!value.modifiers.column_invisible && tmp_fields[value.name]) {
+            if (tmp_fields[value.name]) {
                 self.tmrange_fields[ value.name ] = tmp_fields[value.name][0];
                 tmrange_fields.push([value.name, value.string ||  tmp_fields[value.name][1]]);
             }
@@ -151,7 +151,7 @@ KanbanController.include({
             }
         });
         _.each(self.initialState.fieldsInfo.kanban, function(value, key, list){
-            if (!value.modifiers.column_invisible && tmp_fields[value.name]) {
+            if (tmp_fields[value.name]) {
                 self.tmrange_fields[ value.name ] = tmp_fields[value.name][0];
                 tmrange_fields.push([value.name, value.string || tmp_fields[value.name][1]]);
             }
