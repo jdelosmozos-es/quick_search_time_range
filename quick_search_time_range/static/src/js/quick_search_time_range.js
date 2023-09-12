@@ -36,10 +36,14 @@ var SearchTimeRange = {
         self.$tmrange_time_range.find('.tmrange_time_field').css('width', tmrange_is_datetime_field ? 225 : 150);
         var today = _t('Today');
         var yesterday = _t('Yesterday')
+        var tomorrow = _t('Tomorrow')
+        var next_7_days = _t('Next 7 Days')
         var last_7_days = _t('Last 7 Days')
         var last_30_days = _t('Last 30 Days')
+        var next_30_days = _t('Next 30 Days')
         var this_month = _t('This Month')
         var last_month = _t('Last Month')
+        var next_month = _t('Next Month')
         self.$tmrange_time_range.find('.tmrange_time_field').daterangepicker({
             showDropdowns: true,
             timePicker: tmrange_is_datetime_field,
@@ -56,10 +60,14 @@ var SearchTimeRange = {
             // .set({hour:0,minute:0,second:0,millisecond:0})
             ranges: {
                 [today]: [moment().startOf('day'), moment().endOf('day')],
+                [tomorrow]: [moment().startOf('day').add(1, 'days'), moment().endOf('day').add(1, 'days')],
+                [next_7_days]: [moment().startOf('day'), moment().endOf('day').add(6, 'days')],
+                [this_month]: [moment().startOf('month'), moment().endOf('month')],
+                [next_30_days]: [moment().startOf('day'), moment().endOf('day').add(29, 'days')],
+                [next_month]: [moment().add(1, 'month').startOf('month'), moment().add(1, 'month').endOf('month')],
                 [yesterday]: [moment().startOf('day').subtract(1, 'days'), moment().endOf('day').subtract(1, 'days')],
                 [last_7_days]: [moment().startOf('day').subtract(6, 'days'), moment().endOf('day')],
                 [last_30_days]: [moment().startOf('day').subtract(29, 'days'), moment().endOf('day')],
-                [this_month]: [moment().startOf('month'), moment().endOf('month')],
                 [last_month]: [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
             }
         });
