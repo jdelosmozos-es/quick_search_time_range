@@ -47,15 +47,15 @@ msgstr "Rango a medida"
 #. openerp-web
 #: code:addons/quick_search_time_range/static/src/js/quick_search_time_range.js:0
 #, python-format
-msgid "Last 30 Days"
+msgid "Last 30 days"
 msgstr "Últimos 30 días"
 
 #. module: quick_search_time_range
 #. openerp-web
 #: code:addons/quick_search_time_range/static/src/js/quick_search_time_range.js:0
 #, python-format
-msgid "Last 7 Days"
-msgstr "Últimos 7 días"
+msgid "Last 7 days"
+msgstr "Últios 7 días"
 
 #. module: quick_search_time_range
 #. openerp-web
